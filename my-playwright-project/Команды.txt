@@ -1,0 +1,2 @@
+// запуск теста
+npx playwright test --ui
