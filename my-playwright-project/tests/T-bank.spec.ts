@@ -79,40 +79,80 @@ test.describe('T-bank', () => {
     await expect(panel6).toBeVisible();
     const card6 = panel6.locator('[data-test="panel "]');
     await expect(card6).toBeVisible();
-    
 
+    //Проверка отображения карты - Дебетовая карта S7 - T-Bank
+    const panel7 = page.locator('[data-guid="1f7c8f98-92ba-4c47-b5db-49bb36b2350f"]');
+    await expect(panel7).toBeVisible();
+    const card7 = panel7.locator('[data-test="panel "]');
+    await expect(card7).toBeVisible();
+
+    //Проверка отображения карты - Дебетовая карта S7 - T-Bank Premium
+    const panel8 = page.locator('[data-guid="accf0a8d-fc35-41f3-baa4-58d02d2a8ff9"]');
+    await expect(panel8).toBeVisible();
+    const card8 = panel8.locator('[data-test="panel "]');
+    await expect(card8).toBeVisible();
+
+    //Проверка отображения карты - Дебетовая карта для иностранных граждан
+    const panel9 = page.locator('[data-guid="ed40b862-8d96-4d68-80a7-8e21df52931b"]');
+    await expect(panel9).toBeVisible();
+    const card9 = panel9.locator('[data-test="panel "]');
+    await expect(card9).toBeVisible();
+
+    //Проверка отображения карты - Дебетовая карта ЛУКОЙЛ - Т-Банк
+    const panel10 = page.locator('[data-guid="f68f91f1-f194-48d8-b527-c49269ddd51e"]');
+    await expect(panel10).toBeVisible();
+    const card10 = panel10.locator('[data-test="panel "]');
+    await expect(card10).toBeVisible();
+
+    //Проверка отображения карты - Дебетовая карта "Мир Танков"
+    const panel11 = page.locator('[data-guid="2d7e44ca-374c-49c4-9bee-5e1cc8d993a5"]');
+    await expect(panel11).toBeVisible();
+    const card11 = panel11.locator('[data-test="panel "]');
+    await expect(card11).toBeVisible();
+
+    //Проверка отображения карты - Дебетовая карта Tanks Blitz
+    const panel12 = page.locator('[data-guid="7b71e53a-4ae8-4d7c-ac32-282036122acd"]');
+    await expect(panel12).toBeVisible();
+    const card12 = panel12.locator('[data-test="panel "]');
+    await expect(card12).toBeVisible();
+
+    //Проверка отображения карты - Дебетовая карта "Мир Кораблей"
+    const panel13 = page.locator('[data-guid="6cc284f6-6365-46fb-92c8-f74fac6e20fd"]');
+    await expect(panel13).toBeVisible();
+    const card13 = panel13.locator('[data-test="panel "]');
+    await expect(card13).toBeVisible();
+
+    //Проверка отображения карты - Дебетовая карта Физтех Союза
+    const panel14 = page.locator('[data-guid="4d48f70b-7088-447c-8381-db7df4900a5f"]');
+    await expect(panel14).toBeVisible();
+    const card14 = panel14.locator('[data-test="panel "]');
+    await expect(card14).toBeVisible();
+
+    //Проверка отображения карты - Дебетовая карта Физтех Союза Premium
+    const panel15 = page.locator('[data-guid="7d069c4c-292e-4152-bcba-53abad1f8ab0"]');
+    await expect(panel15).toBeVisible();
+    const card15 = panel15.locator('[data-test="panel "]');
+    await expect(card15).toBeVisible();
+
+    //Проверка отображения карты - Дебетовая карта AliExpress
+    const panel16 = page.locator('[data-guid="4641755d-43e9-4ce6-b9c7-a0ef1fb47695"]');
+    await expect(panel16).toBeVisible();
+    const card16 = panel16.locator('[data-test="panel "]');
+    await expect(card16).toBeVisible();
+
+    //Проверка отображения карты - Дебетовая карта Lamoda
+    const panel17 = page.locator('[data-guid="19368744-e327-400f-b586-002e56d2ecaf"]');
+    await expect(panel17).toBeVisible();
+    const card17 = panel17.locator('[data-test="panel "]');
+    await expect(card17).toBeVisible();
+
+
+
+
+
+      
     
     debugger 
 
-    //Проверка отображения карты - Дебетовая карта S7 - T-Bank
-    const panel6 = page.locator('[data-guid="0b36b27e-ee77-4829-9055-899b1f60142a"]');
-    await expect(panel6).toBeVisible();
-    const card6 = panel6.locator('[data-test="panel "]');
-    await expect(card6).toBeVisible();
-
-    //Проверка отображения карты - Дебетовая карта S7 - T-Bank Premium
-    const panel6 = page.locator('[data-guid="0b36b27e-ee77-4829-9055-899b1f60142a"]');
-    await expect(panel6).toBeVisible();
-    const card6 = panel6.locator('[data-test="panel "]');
-    await expect(card6).toBeVisible();
-
-    //Проверка отображения карты - Дебетовая карта для иностранных граждан
-    const panel6 = page.locator('[data-guid="0b36b27e-ee77-4829-9055-899b1f60142a"]');
-    await expect(panel6).toBeVisible();
-    const card6 = panel6.locator('[data-test="panel "]');
-    await expect(card6).toBeVisible();
-
-
-    //Проверка отображения карты - Дебетовая карта ЛУКОЙЛ - Т-Банк
-    const panel6 = page.locator('[data-guid="0b36b27e-ee77-4829-9055-899b1f60142a"]');
-    await expect(panel6).toBeVisible();
-    const card6 = panel6.locator('[data-test="panel "]');
-    await expect(card6).toBeVisible();
-
-    //Проверка отображения карты - Дебетовая карта "Мир Танков"
-    const panel6 = page.locator('[data-guid="0b36b27e-ee77-4829-9055-899b1f60142a"]');
-    await expect(panel6).toBeVisible();
-    const card6 = panel6.locator('[data-test="panel "]');
-    await expect(card6).toBeVisible();
   });
 });
