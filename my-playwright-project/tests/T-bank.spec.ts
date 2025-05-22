@@ -31,10 +31,10 @@ test.describe('T-bank', () => {
     // Проверка пунктов основного меню (Кредиты и ипотека)
     const credit = page.locator('[data-test="text-item-0-2-text"]').filter({hasText:"Кредиты и ипотека"});
     await expect(credit).toBeVisible();
-
   });
 
-  test('Проверка старницы дебетовых куарт', async ({ page }) => {
+
+  test('Проверка старницы дебетовых карт', async ({ page }) => {
     // Открываем страницу и проверяем, что она загружается
     const response = await page.goto('https://www.tbank.ru/cards/debit-cards/');
     await expect(response?.status()).toBe(200);
@@ -145,14 +145,55 @@ test.describe('T-bank', () => {
     await expect(panel17).toBeVisible();
     const card17 = panel17.locator('[data-test="panel "]');
     await expect(card17).toBeVisible();
+  });
 
 
+  test('Проверка старницы вклады', async ({ page }) => {
+    // Открываем страницу со вкладами и проверяем, что она загружается
+    const response = await page.goto('https://www.tbank.ru/savings/deposit/');
+    await expect(response?.status()).toBe(200);
+    await expect(page).toHaveURL('https://www.tbank.ru/savings/deposit/');
 
+    // Проверяем что есть информация о вкладах
+    const depositinfo = page.locator('[data-guid="de0e9de7-4ef8-450d-a42a-70cc533669ff"]');
+    await expect(depositinfo).toBeVisible();
 
+    // Проверяем что есть информация о процентных ставках
+    const depositrate = page.locator('[data-guid="e2c4195a-6d20-45df-919d-54ae7e26565f"]');
+    await expect(depositrate).toBeVisible();
+  });
 
+    
+  test('Проверка старницы с кредитами', async ({ page }) => {
+    // Открываем страницу с кредитами и проверяем, что она загружается
+    const response = await page.goto('https://www.tbank.ru/loans/');
+    await expect(response?.status()).toBe(200);
+    await expect(page).toHaveURL('https://www.tbank.ru/loans/');
+    // Проверяем что есть кнопка рассчитать кредит
+    //const creditcalculatemainblock = page.locator('[c0f0d162-8d95-4c91-9d5d-353be4932d16]');
+    //await expect(creditcalculatemainblock).toBeVisible();
+
+    const creditcalculatebutton = page.locator('[data-guid="c0f0d162-8d95-4c91-9d5d-353be4932d16"]');
+    await expect(creditcalculatebutton).toBeVisible();
+    await creditcalculatebutton.click();
+
+    //const creditcalculate = creditcalculateblock.locator('[data-qa-type="uikit/button.content"]').filter({hasText:"Рассчитать кредит"});
+    //await expect(creditcalculate).toBeVisible();
+    //await creditcalculate.click();
+
+    // Проверояем наличие полей для подачи заявки и рассчета условий кредита
+    const fields = page.locator('[data-qa-type="calculator-screen"]');
+    await expect(fields).toBeVisible(); 
+
+    const summ = fields.locator('[data-field-name="sum"]');
+    await expect(summ).toBeVisible(); 
+
+    const years = fields.locator('[data-field-name="term"]');
+    await expect(years).toBeVisible();
+    const target = fields.locator('[data-field-name="loanPurpose"]');
+    await expect(target).toBeVisible();
       
     
     debugger 
-
   });
 });
